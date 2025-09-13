@@ -56,6 +56,7 @@ const forwardBtn = document.querySelector(".forward");
 const backForwardBtn = document.querySelector(".back-forward");
 const musicCover = document.querySelector("img")
 const musicTitle = document.querySelector("h1")
+const musicCard = document.querySelector(".music-card")
 
 const musics = [
     { id: 1, src: "./src/public/musics/Hoomaan - Farsangaa (320).mp3", cover: "./src/public/Julianna Sinclair.jpg", title: "فرسنگا", singer: "هومان، کرورش" },
@@ -115,6 +116,18 @@ function forwardHandler() {
 
     document.body.style.backgroundColor =
         `hsl(${hueRange}, ${saturation}%, ${lightness}%)`;
+    // رنگ body
+    document.body.style.backgroundColor =
+        `hsl(${hueRange}, ${saturation}%, ${lightness}%)`;
+
+    // رنگ music-card با کمی تفاوت
+    const cardHue = (hueRange + 20) % 360;          // کمی hue رو تغییر میدیم
+    const cardLight = Math.min(lightness + 10, 50); // کمی روشن‌تر
+    musicCard.style.background = `linear-gradient(135deg, hsl(${cardHue}, ${saturation}%, ${cardLight}%), hsl(${cardHue}, ${saturation}%, ${cardLight + 5}%))`;
+
+    // متن روشن برای خوانایی
+    musicCard.style.color = "#f1f5f9";
+
 
 
     music.play();
@@ -153,6 +166,18 @@ function backForwardHandler() {
 
     document.body.style.backgroundColor =
         `hsl(${hueRange}, ${saturation}%, ${lightness}%)`;
+    // رنگ body
+    document.body.style.backgroundColor =
+        `hsl(${hueRange}, ${saturation}%, ${lightness}%)`;
+
+    // رنگ music-card با کمی تفاوت
+    const cardHue = (hueRange + 20) % 360;          // کمی hue رو تغییر میدیم
+    const cardLight = Math.min(lightness + 10, 50); // کمی روشن‌تر
+    musicCard.style.background = `linear-gradient(135deg, hsl(${cardHue}, ${saturation}%, ${cardLight}%), hsl(${cardHue}, ${saturation}%, ${cardLight + 5}%))`;
+
+    // متن روشن برای خوانایی
+    musicCard.style.color = "#f1f5f9";
+
 
 
     music.play();
