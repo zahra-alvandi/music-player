@@ -96,6 +96,27 @@ function forwardHandler() {
     music.setAttribute("src", mainMusic.src);
     musicTitle.innerHTML = `${mainMusic.title} - ${mainMusic.singer}`;
 
+    const palette = ["blue", "brown"]; // دو خانواده
+    const family = palette[Math.floor(Math.random() * palette.length)];
+
+    let hueRange, saturation, lightness;
+
+    if (family === "blue") {
+        // آبی تیره: hue 200–240
+        hueRange = 200 + Math.floor(Math.random() * 40);
+        saturation = 40 + Math.floor(Math.random() * 30);
+        lightness = 20 + Math.floor(Math.random() * 15);
+    } else {
+        // قهوه‌ای تیره: hue 20–40 (نارنجی-قرمز) + کمی اشباع کم
+        hueRange = 20 + Math.floor(Math.random() * 20);
+        saturation = 30 + Math.floor(Math.random() * 20);
+        lightness = 20 + Math.floor(Math.random() * 15);
+    }
+
+    document.body.style.backgroundColor =
+        `hsl(${hueRange}, ${saturation}%, ${lightness}%)`;
+
+
     music.play();
     playOrPauseBtn.classList.remove(".fa-play");
     playOrPauseBtn.classList.add(".fa-pause");
@@ -112,6 +133,27 @@ function backForwardHandler() {
     musicCover.setAttribute("src", mainMusic.cover);
     music.setAttribute("src", mainMusic.src);
     musicTitle.innerHTML = `${mainMusic.title} - ${mainMusic.singer}`;
+
+    const palette = ["blue", "brown"]; // دو خانواده
+    const family = palette[Math.floor(Math.random() * palette.length)];
+
+    let hueRange, saturation, lightness;
+
+    if (family === "blue") {
+        // آبی تیره: hue 200–240
+        hueRange = 200 + Math.floor(Math.random() * 40);
+        saturation = 40 + Math.floor(Math.random() * 30);
+        lightness = 20 + Math.floor(Math.random() * 15);
+    } else {
+        // قهوه‌ای تیره: hue 20–40 (نارنجی-قرمز) + کمی اشباع کم
+        hueRange = 20 + Math.floor(Math.random() * 20);
+        saturation = 30 + Math.floor(Math.random() * 20);
+        lightness = 20 + Math.floor(Math.random() * 15);
+    }
+
+    document.body.style.backgroundColor =
+        `hsl(${hueRange}, ${saturation}%, ${lightness}%)`;
+
 
     music.play();
     playOrPauseBtn.classList.remove(".fa-play");
